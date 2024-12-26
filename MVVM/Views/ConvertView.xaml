@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Unit_Conversion.MVVM.Views.ConvertView"
+             Title="{Binding QuantityName}"
+             xmlns:local="clr-namespace:Unit_Conversion"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Image Source="mine.jpg" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" Opacity="0.6"/>
+        <VerticalStackLayout>
+            <Grid Margin="0,100,0,0">
+                    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <local:BorderlessEntry FontSize="100" HorizontalTextAlignment="Center" Text="{Binding FromValue}"
+                           TextColor="#E2E2B6"
+                           Keyboard="Numeric"
+                           ReturnCommand="{Binding ReturnCommand}"/>
+                    <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="▼" FontSize="30" TextColor="#E2E2B6" Margin="0,8,0,0"/>
+                        <local:BorderlessPicker HorizontalTextAlignment="Center" 
+                               TextColor="#E2E2B6"
+                               ItemsSource="{Binding FromMeasures}"
+                               SelectedItem="{Binding CurrentFromMeasure}"
+                               SelectedIndexChanged="Picker_SelectedIndexChanged" FontSize="30"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+            <Grid Margin="0,200,0,0">
+                    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label FontSize="100" HorizontalTextAlignment="Center" Text="{Binding ToValue, StringFormat='{0:0.##}'}"
+                                TextColor="#E2E2B6" Margin="0,0,0,0"
+                                LineBreakMode="TailTruncation"/>
+                    <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="▼" FontSize="30" TextColor="#E2E2B6" Margin="0,8,0,0"/>
+                        <local:BorderlessPicker HorizontalTextAlignment="Center" 
+                          TextColor="#E2E2B6"
+                          ItemsSource="{Binding ToMeasures}"
+                          SelectedItem="{Binding CurrentToMeasure}"
+                          SelectedIndexChanged="Picker_SelectedIndexChanged" FontSize="30"/>
+                    </HorizontalStackLayout>
+                       
+                    </VerticalStackLayout>
+            </Grid>
+
+        </VerticalStackLayout>
+    </Grid>
+        
+</ContentPage>

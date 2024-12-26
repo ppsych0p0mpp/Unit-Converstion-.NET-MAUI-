@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Unit_Conversion.MVVM.Views.ViewMenu"
+             Title="ViewMenu"
+             BackgroundImageSource="mine.jpg"
+             Opacity="0.9"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <!-- Title Section -->
+            <HorizontalStackLayout>
+                <Frame HeightRequest="150" WidthRequest="350" Margin="15,40,15,0" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="kid_gif.gif" WidthRequest="200" HeightRequest="200" IsAnimationPlaying="True" Margin="0,0,0,0"/>
+                        <Label Grid.Column="1" Text="Unit Conversion Try it now!" Margin="0, 25,0,0" TextColor="#003c5c" FontSize="25" FontFamily="fontello.ttf" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+            </HorizontalStackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!-- Feautured Section -->
+                <Label Text="Featured Measurements" FontSize="25" TextColor="#E2E2B6" FontAttributes="Bold" Margin="20,30,0,0" FontFamily="fontello.ttf"/>
+                <HorizontalStackLayout Grid.Row="1">
+                    <Grid Margin="15,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="0" Margin="20,20,0,0" BackgroundColor="#9ABF80" BorderColor="#E2E2B6" BindingContext="{x:Reference LabelRef}">
+                                <Image Source="length.svg"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Label x:Name="LabelRef" Text="Length" TextColor="#E2E2B6" FontSize="15" Grid.Row="1" FontAttributes="Bold" Margin="50,5,0,0" FontFamily="fontello.ttf"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="0" Margin="20,20,0,0" BackgroundColor="#9ABF80" BorderColor="#E2E2B6">
+                                <Image Source="duration.svg"/>
+                            </Frame>
+                            <Label Text="Duration" TextColor="#E2E2B6" FontSize="15" Grid.Row="1" FontAttributes="Bold" Margin="45,5,0,0" FontFamily="fontello.ttf"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Frame WidthRequest="100" HeightRequest="100" CornerRadius="0" Margin="20,20,0,0" BackgroundColor="#9ABF80" BorderColor="#E2E2B6">
+                                <Image Source="speed.svg"/>
+                            </Frame>
+                            <Label Text="Speed" TextColor="#E2E2B6" FontSize="15" Grid.Row="1" FontAttributes="Bold" Margin="25,5,0,0" HorizontalTextAlignment="Center" FontFamily="fontello.ttf"/>
+                        </Grid>
+                    </Grid>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <!-- All Measurements Section -->
+            <Label Text="All Measurements" FontSize="25" TextColor="#E2E2B6" FontAttributes="Bold" Margin="20,30,0,0" FontFamily="fontello.ttf"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <!-- Information Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="1" BackgroundColor="#9ABF80" BorderColor="White">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="information.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Information" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Volume Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="1" BackgroundColor="#9ABF80" BorderColor="White" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="volume.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Volume" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Length Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Column="0" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="length.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Length" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Mass Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Row="1" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="mass.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Mass" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Temperature Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Row="2" Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="temperatures.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Temperature" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Energy Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Row="2" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="energy.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Energy" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Area Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Row="3" Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="area.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Area" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+                
+                <!-- Speed Section -->
+                <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="0" BackgroundColor="#9ABF80" BorderColor="White" Grid.Row="3" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+                        <Image Source="speed.svg" WidthRequest="50" HeightRequest="50"/>
+                        <Label Grid.Column="1" Text="Speed" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+           
+            <!-- Duration Section -->
+            <Frame Margin="15,25,15,0" HeightRequest="100" CornerRadius="1" BackgroundColor="#9ABF80" BorderColor="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="duration.svg" WidthRequest="50" HeightRequest="50"/>
+                    <Label Grid.Column="1" Text="Duration" TextColor="#003c5c" FontFamily="fontello.ttf" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                </Grid>
+            </Frame>
+            <Frame Margin="15,25,15,0" HeightRequest="20" BackgroundColor="Transparent" BorderColor="Transparent"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>  
